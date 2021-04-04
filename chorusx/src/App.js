@@ -1,16 +1,33 @@
+/* global $ */
 import "./index.css";
 import { ReactComponent as CaretIcon } from "./icons/caret.svg"; // arrow down
 import { ReactComponent as CogIcon } from "./icons/cog.svg"; // settings
 import { ReactComponent as ChevronIcon } from "./icons/chevron.svg"; // settings
 import { ReactComponent as ArrowIcon } from "./icons/arrow.svg"; // arrow
-import { FaSatellite } from 'react-icons/fa'
-
+import { FaSatellite } from "react-icons/fa";
 import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
+import ReactAwesomeClock from "react-awesome-clock";
 
 function App() {
   return (
     <Navbar>
+        <div id="header">
+          <h1>ChorosX</h1>
+        </div>
+        <div class="clock">
+          <ReactAwesomeClock
+            style={{
+              color: "white",
+              fontSize: 30,
+              textShadow: "0 0 0 grey",
+              fontFamily: "Righteous, serif",
+            }}
+          />
+        </div>
+        <div>
+          <h2>Menu</h2>
+        </div>
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
@@ -31,7 +48,7 @@ function NavItem(props) {
 
   return (
     <li className="nav-item">
-      <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+      <a href="#" className="icon-button-main" onClick={() => setOpen(!open)}>
         {props.icon}
       </a>
 
@@ -81,7 +98,7 @@ function DropdownMenu() {
           <DropdownItem
             leftIcon={<FaSatellite />}
             rightIcon={<ChevronIcon />}
-            goToMenu = "satellites"
+            goToMenu="satellites"
           >
             Satellites
           </DropdownItem>
@@ -116,9 +133,7 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Satellites</h2>
-          </DropdownItem>
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}></DropdownItem>
         </div>
       </CSSTransition>
     </div>

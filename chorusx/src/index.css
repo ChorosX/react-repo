@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
 body {
   margin: 0;
   background: #151616;
@@ -7,19 +9,18 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
 :root {
-  --bg:  #242526;
+  --bg: #242526;
   --bg-accent: #484a4d;
   --text-color: #dadce1;
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 500ms; 
+  --speed: 500ms;
 }
 
 ul {
@@ -28,7 +29,30 @@ ul {
   padding: 0;
 
   color: var(--text-color);
-  text-decoration: none;;
+  text-decoration: none;
+}
+/* Title*/
+
+h1 {
+  color: white;
+  padding-top: 20px;
+  text-decoration: none;
+  font-family: "Righteous", serif;
+}
+
+.clock {
+  width: 85%;
+  z-index: 1;
+  color: white;
+  font-size: 56px;
+}
+
+h2 {
+  color: white;
+  padding-right: 20px;
+  padding-top: 20px;
+  font-size: 160%;
+  font-family: "Righteous", serif;
 }
 
 /* Top Navigation Bar */
@@ -36,8 +60,8 @@ ul {
 /* <nav> */
 .navbar {
   color: white;
-  margin-bottom:-17px;
-  height: 80px;
+  margin-bottom: -17px;
+  height: 100px;
   background-color: var(--bg);
   padding: 0 2rem;
   border-bottom: var(--border);
@@ -59,6 +83,20 @@ ul {
   justify-content: center;
 }
 
+.icon-button-main {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: #484a4d;
+  border-radius: 100%;
+  padding: 20px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
 /* Icon Button */
 .icon-button {
   --button-size: calc(var(--nav-size) * 0.7);
@@ -77,13 +115,20 @@ ul {
 .icon-button:hover {
   filter: brightness(1.2);
 }
+.icon-button-main:hover {
+  filter: brightness(1.2);
+}
 
 .icon-button svg {
   fill: var(--text-color);
   width: 30px;
   height: 30px;
 }
-
+.icon-button-main svg {
+  fill: var(--text-color);
+  width: 30px;
+  height: 30px;
+}
 
 /* Dropdown Menu */
 
@@ -121,7 +166,6 @@ ul {
   margin-right: 0.5rem;
 }
 
-
 .menu-item .icon-button:hover {
   filter: none;
 }
@@ -150,7 +194,6 @@ ul {
   transform: translateX(-110%);
   transition: all var(--speed) ease;
 }
-
 
 .menu-secondary-enter {
   transform: translateX(110%);
