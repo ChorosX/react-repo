@@ -83,7 +83,7 @@ function DropdownMenu() {
             rightIcon={<ChevronIcon />}
             goToMenu = "satellites"
           >
-            Satellites
+             Satellites
           </DropdownItem>
 
           <DropdownItem
@@ -116,9 +116,7 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
-            <h2>Satellites</h2>
-          </DropdownItem>
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}></DropdownItem>
         </div>
       </CSSTransition>
     </div>
