@@ -5,25 +5,33 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Globe from 'react-globe.gl';
 
-const N = 1;
+const N = 2;
 setInterval(async function getSatalites() {
   const response = await fetch('http://localhost:5000/satdata/25544');
   console.log("updating")
   let data = await response.json()
-  console.log(data)
 
   
   //let satName = data[0]
   let lat = data[1]
   let long = data[2]
+  let lat0 = -25.87960202 
+  let lng0 = 21.53658652
 
 
-  const gData = [...Array(N).keys()].map(() => ({
-    lat: lat,
-    lng: long,
+  const gData = [{
+    lat: '-25.87960202',
+    lng: '-21.53658652',
     size: 0.1,
     color: 'red'
-  }));
+  },
+  {
+  lat: '-27.87960202',
+  lng: '-28.53658652',
+  size: 0.1,
+  color: 'red'
+}];
+  console.log(gData)
 
   ReactDOM.render(
     <React.StrictMode>
