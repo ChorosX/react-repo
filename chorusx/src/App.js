@@ -12,22 +12,22 @@ import ReactAwesomeClock from "react-awesome-clock";
 function App() {
   return (
     <Navbar>
-        <div id="header">
-          <h1>ChorosX</h1>
-        </div>
-        <div class="clock">
-          <ReactAwesomeClock
-            style={{
-              color: "white",
-              fontSize: 30,
-              textShadow: "0 0 0 grey",
-              fontFamily: "Righteous, serif",
-            }}
-          />
-        </div>
-        <div>
-          <h2>Menu</h2>
-        </div>
+      <div id="header">
+        <h1>ChorosX</h1>
+      </div>
+      <div class="clock">
+        <ReactAwesomeClock
+          style={{
+            color: "white",
+            fontSize: 30,
+            textShadow: "0 0 0 grey",
+            fontFamily: "Righteous, serif",
+          }}
+        />
+      </div>
+      <div>
+        <h2>Menu</h2>
+      </div>
       <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
       </NavItem>
@@ -100,7 +100,7 @@ function DropdownMenu() {
             rightIcon={<ChevronIcon />}
             goToMenu="satellites"
           >
-             Satellites
+            Satellites
           </DropdownItem>
 
           <DropdownItem
@@ -133,7 +133,26 @@ function DropdownMenu() {
         onEnter={calcHeight}
       >
         <div className="menu">
-          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}></DropdownItem>
+          <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
+            <h2>Choose A Satellite!</h2></DropdownItem>
+          <DropdownItem>International Space Station</DropdownItem>
+          <DropdownItem>Hubble Telescope</DropdownItem>
+          <DropdownItem>TERRA</DropdownItem>
+          <DropdownItem>GOES-12</DropdownItem>
+          <DropdownItem>GOES-13</DropdownItem>
+          <DropdownItem>Envisat</DropdownItem>
+          <DropdownItem>Galaxy 14</DropdownItem>
+          <DropdownItem>AGILE</DropdownItem>
+          <DropdownItem>NOAA 19</DropdownItem>
+          <DropdownItem>SUOMI NPP</DropdownItem>
+          <DropdownItem>FUNcube-1</DropdownItem>
+          <DropdownItem>FOX-1A</DropdownItem>
+          <DropdownItem>OFEQ 11</DropdownItem>
+          <DropdownItem>OZS 2</DropdownItem>
+          <DropdownItem>VIASAT 2</DropdownItem>
+
+
+
         </div>
       </CSSTransition>
     </div>
