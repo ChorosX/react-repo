@@ -5,55 +5,76 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Globe from 'react-globe.gl';
 
-const N = 1;
+// import THREE from './three'
+
 setInterval(async function getSatalites() {
-  const response = await fetch('http://localhost:5000/satdata/25544');
+  const response = await fetch('http://localhost:5000/satellites/25544');
   console.log("updating")
   let data = await response.json()
-  console.log(data)
+  //let satName = data[0]
+  let lat = data['latitude'][data['latitude'].length - 1]
+  let lng = data['longitude'][data['longitude'].length - 1]
+  let satName = data['satName']
+
+  let lat0 = data['latitude'][data['latitude'].length - 20] 
+  let lng0 = data['longitude'][data['longitude'].length - 20]
+
+  const N = 1
+  const arcsData = [...Array(N).keys()].map(() => ({
+    startLat: lat0,
+    startLng: lng0,
+    endLat: lat,
+    endLng: lng,
+    color: 'white',
+    arcAltitude: '0',
+    arcStroke: '0.5',
+  }));
+
+  const arcsData2 = [...Array(N).keys()].map(() => ({
+    endLat: lat,
+    endLng: lng,
+    pointAltitude: '0.005',
+    pointRadius:'1',
+    pointColor:'white',
+    altitude: 3.5
+  }));
 
   
-  //let satName = data[0]
-  let lat = data[1]
-  let long = data[2]
-
-
-  const gData = [...Array(N).keys()].map(() => ({
-    lat: lat,
-    lng: long,
-    size: 0.1,
-    color: 'red'
-  }));
 
   ReactDOM.render(
     <React.StrictMode>
-    <App />,
-    
-    <Globe
-      backgroundImageUrl="https://cdn.eso.org/images/large/eso0932a.jpg"
-      globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-      bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-      
-      pointsData={gData}
-      pointAltitude="size"
-      pointColor="color"
-
-      /*customLayerData={data}
-      customThreeObject={d => new THREE.Mesh(
-        new THREE.SphereBufferGeometry(d.radius),
-        new THREE.MeshLambertMaterial({ color: d.color })
-      )}
-
-      customThreeObjectUpdate={(obj, d) => {
-        Object.assign(obj.position, globeEl.current.getCoords(d.lat, d.lgn, 3))
-      }*/
-
+      <App />,
+    </React.StrictMode>,
+    document.getElementById('navbar')
+  );
+  
+  ReactDOM.render(
+    <React.StrictMode>
+    <Globe s
+      backgroundImageUrl = "https://cdn.eso.org/images/large/eso0932a.jpg"
+      globeImageUrl = "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+      bumpImageUrl = "//unpkg.com/three-globe/example/img/earth-topology.png"
+      arcsData = {arcsData}
+      pointsData = {arcsData2}
+      pointLat = {'endLat'}
+      pointLng = {'endLng'}
+      pointAltitude = {'pointAltitude'}
+      pointRadius = {'pointRadius'}
+      pointColor = {'pointColor'}
+      pointLabel = {d => `<div><b>` + satName + `<br><br>Latitude:  ` + lat + `<br>Longitude:  ` + lng + `</b><br></div>`}
+      onPointClick={d => {window.open(d.url, '_blank');console.log("CLICKED")}}
+      onPointHover={d => {console.log("zaid is gamer")}}
+      arcColor = {'color'}
+      arcAltitude = {'arcAltitude'}
+      arcStroke = {'arcStroke'}
+      arcColor = {[`rgba(255, 255, 255, 0)`, `rgba(255, 255, 255, 0.7)`]}
+      arcLabel = {d => `<div><b>ISS</b></div>`}
     />,
+    
     </React.StrictMode>,
     document.getElementById('root')
   );
-
-}, 15000)
+}, 30000)
 
 
 // If you want to start measuring performance in your app, pass a function
