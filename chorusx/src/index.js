@@ -12,9 +12,10 @@ setInterval(async function getSatalites() {
   let data = await response.json()
   console.log(data)
 
-  let jsonData = data.positions[0]
-  let lat = jsonData.satlatitude
-  let long = jsonData.satlongitude
+  
+  //let satName = data[0]
+  let lat = data[1]
+  let long = data[2]
 
 
   const gData = [...Array(N).keys()].map(() => ({
@@ -46,13 +47,13 @@ setInterval(async function getSatalites() {
       customThreeObjectUpdate={(obj, d) => {
         Object.assign(obj.position, globeEl.current.getCoords(d.lat, d.lgn, 3))
       }*/
-      
+
     />,
     </React.StrictMode>,
     document.getElementById('root')
   );
 
-}, 3000)
+}, 15000)
 
 
 // If you want to start measuring performance in your app, pass a function
