@@ -8,6 +8,7 @@ https://cdn.discordapp.com/attachments/818394019619930112/828432188294692874/Scr
 https://media.discordapp.net/attachments/818394019619930112/828432187942633522/Screenshot_4.jpg?width=998&height=504
 
 Team Members:
+
 Troy Davis
 
 Max Bogatyrov
