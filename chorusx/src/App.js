@@ -1,4 +1,3 @@
-/* global $ */
 import "./index.css";
 import { ReactComponent as CaretIcon } from "./icons/caret.svg"; // arrow down
 import { ReactComponent as CogIcon } from "./icons/cog.svg"; // settings
@@ -9,13 +8,14 @@ import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import ReactAwesomeClock from "react-awesome-clock";
 
+
 function App() {
   return (
     <Navbar>
-        <div id="header">
+     <div id="header">
           <h1>ChorosX</h1>
         </div>
-        <div class="clock">
+        <div className="clock">
           <ReactAwesomeClock
             style={{
               color: "white",
@@ -26,11 +26,8 @@ function App() {
           />
         </div>
         <div>
-          <h2>Menu</h2>
+          <h2>MataHacks2021</h2>
         </div>
-      <NavItem icon={<CaretIcon />}>
-        <DropdownMenu></DropdownMenu>
-      </NavItem>
     </Navbar>
   );
 }
@@ -57,6 +54,7 @@ function NavItem(props) {
   );
 }
 
+<<<<<<< Updated upstream
 function DropdownMenu() {
   const [activeMenu, setActiveMenu] = useState("main");
   const [menuHeight, setMenuHeight] = useState(null);
@@ -140,4 +138,6 @@ function DropdownMenu() {
   );
 }
 
+=======
+>>>>>>> Stashed changes
 export default App;
