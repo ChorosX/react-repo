@@ -17,6 +17,6 @@ David Quines
 
 P.S. Team was mostly working in Live Share mode, thus, commits include contributions from all team members
 
-![Choros Demo 1](https://i.imgur.com/sRkXJPJ.jpg)
+![Choros Demo 1](https://i.imgur.com/TJrKNbb.jpg)
 
 ![Choros Demo 2](https://i.imgur.com/QS5um3M.jpg)
