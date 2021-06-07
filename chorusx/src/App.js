@@ -13,7 +13,7 @@ function App() {
   return (
     <Navbar>
      <div id="header">
-          <h1>ChorosX</h1>
+          <h1>ChórosX</h1>
         </div>
         <div className="clock">
           <ReactAwesomeClock

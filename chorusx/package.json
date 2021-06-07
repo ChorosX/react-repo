@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
+    "aws-amplify": "^4.0.3",
+    "aws-amplify-react": "^5.0.1",
     "cors": "^2.8.5",
     "react": "^17.0.2",
     "react-awesome-clock": "^2.0.1",
